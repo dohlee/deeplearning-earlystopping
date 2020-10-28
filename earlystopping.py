@@ -17,14 +17,14 @@ class EarlyStopping(object):
 
         if self.less_is_better:
             # Best loss updated.
-            if loss < self.best - delta:
+            if loss < self.best - self.delta:
                 self.best = loss
                 self.counter = 0
             else:
                 self.counter += 1
         else:
             # Best loss updated.
-            if loss > self.best + delta:
+            if loss > self.best + self.delta:
                 self.best = loss
                 self.counter = 0
             else:
